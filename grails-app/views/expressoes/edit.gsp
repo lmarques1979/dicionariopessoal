@@ -11,7 +11,7 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><g:link class="list" action="index"><g:message code="expressoes.list.label"/></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="expressoes.new.label" /></g:link></li>
+				
 			</ul>
 		</div>
 		<div id="edit-expressoes" class="content scaffold-edit" role="main">
@@ -30,9 +30,8 @@
 				<fieldset class="form">
 					<g:render template="form"/>
 				</fieldset>
-				<fieldset class="buttons">
-					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-				</fieldset>
+				<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+				
 			</g:form>
 		</div>
 	</body>

@@ -12,15 +12,17 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><g:link class="list" action="index"><g:message code="dicionario.list.label" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="dicionario.new.label"/></g:link></li>
+				<li><g:link class="create" action="create"><g:message code="dicionario.new.label" /></g:link></li>
 			</ul>
 		</div>
 		<div id="show-dicionario" class="content scaffold-show" role="main">
+		
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
-			<ol class="property-list dicionario">
 			
+			<ol class="property-list dicionario">
+				
 				<g:if test="${dicionarioInstance?.nome}">
 				<li class="fieldcontain">
 					<span id="nome-label" class="property-label"><g:message code="dicionario.nome.label" default="Nome" /></span>

@@ -32,14 +32,14 @@
 					<li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
 						
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
-						<li><g:link class="cadastroidioma" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
+						<li><g:link class="idioma" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
 					</g:if>
 					<g:else>
-						<li><g:link class="cadastrodicionario" controller="Dicionario" action="create"><g:message code="cadastrodicionario.label"/></g:link></li>
-						<li><g:link class="createexpressoes" controller="Expressoes" action="create"><g:message code="visualizaexpressoes.label"/></g:link></li>
-						<li><g:link class="dicionariosusuario" controller="DicionarioUsuario" action="index"><g:message code="dicionariosusuarios.label"/></g:link></li>
+						<li><g:link class="dicionario" controller="Dicionario" action="index"><g:message code="dicionarios.label"/></g:link></li>
+						<li><g:link class="addexpressao" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
+						<li><g:link class="expressao" controller="Expressoes" action="index"><g:message code="visualizaexpressoes.label"/></g:link></li>
 					</g:else>
-					<li><g:link class="login" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
+					<li><g:link class="logout" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
 				</sec:ifLoggedIn>
 				</ul>
 			</div>

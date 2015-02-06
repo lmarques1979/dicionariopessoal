@@ -1,5 +1,6 @@
 <%@ page import="dicionariopessoal.Dicionario" %>
 
+<legend><g:message code="dadosdicionario.label"/></legend>
 <div class="fieldcontain ${hasErrors(bean: dicionarioInstance, field: 'nome', 'error')} required">
 	<label for="nome">
 		<g:message code="dicionario.nome.label" default="Nome" />

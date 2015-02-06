@@ -1,12 +1,13 @@
 package seguranca
 
 import static org.springframework.http.HttpStatus.*
+import dicionariopessoal.BaseController
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
 @Transactional(readOnly = true)
 @Secured('isAuthenticated()')
-class UsuarioController {
+class UsuarioController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "POST", delete: "DELETE"]
 
@@ -17,6 +18,14 @@ class UsuarioController {
 
 	@Secured('permitAll')
     def show(Usuario usuarioInstance) {
+		
+		def erros=[]
+		if(usuarioInstance!=usuarioLogado){
+			erros[0] = message(code: 'usuarionaopermitido.error')
+			flash.erros = erros
+			return
+		}
+		
         respond usuarioInstance
     }
 
@@ -57,6 +66,13 @@ class UsuarioController {
     }
 
     def edit(Usuario usuarioInstance) {
+		
+		def erros=[]
+		if(usuarioInstance!=usuarioLogado){
+			erros[0] = message(code: 'usuarionaopermitido.error')
+			flash.erros = erros
+			return
+		}
         respond usuarioInstance
     }
 

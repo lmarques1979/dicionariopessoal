@@ -26,14 +26,16 @@
 			</g:if>
 			
 			<table>
+				
 				<g:form url="[resource:expressoesInstance, action:'index']" >
 					<thead>
 						<tr>
-							<th>${message(code: "dicionario.label")}</th>
+							<th colspan="2">${message(code: "dicionario.label")}</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
+							
 							<td>
 								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${filtro}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario()}" optionKey="id"/>
 							</td>

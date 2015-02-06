@@ -19,7 +19,7 @@ class MyAuthenticationSuccessHandler extends AjaxAwareAuthenticationSuccessHandl
 		if(usuario.username == 'admin'){
 			redirectStrategy.sendRedirect(request, response, '/');
 		}else{
-			redirectStrategy.sendRedirect(request, response, '/dicionarioUsuario/index');
+			redirectStrategy.sendRedirect(request, response, '/expressoes/index');
 		}
 	}
 }

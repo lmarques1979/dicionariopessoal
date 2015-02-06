@@ -12,13 +12,15 @@
 		<div class="nav" role="navigation">
 			<ul>
 				<li><g:link class="list" action="index"><g:message code="expressoes.list.label"  /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="expressoes.new.label" /></g:link></li>
+				
 			</ul>
 		</div>
 		<div id="show-expressoes" class="content scaffold-show" role="main">
+		
 			<g:if test="${flash.message}">
 			<div class="message" role="status">${flash.message}</div>
 			</g:if>
+
 			<ol class="property-list expressoes">
 			
 				<g:if test="${expressoesInstance?.expressaoorigem}">
@@ -32,6 +34,7 @@
 			
 				<g:if test="${expressoesInstance?.expressaodestino}">
 				<li class="fieldcontain">
+					
 					<span id="expressaodestino-label" class="property-label"><g:message code="expressoes.expressaodestino.label" default="Expressaodestino" /></span>
 					
 						<span class="property-value" aria-labelledby="expressaodestino-label"><g:fieldValue bean="${expressoesInstance}" field="expressaodestino"/></span>

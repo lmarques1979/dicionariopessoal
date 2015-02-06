@@ -1,4 +1,5 @@
 <%@ page import="seguranca.Usuario" %>
+<legend><g:message code="dadosusuario.label"/></legend>
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'username', 'error')} required">
 	<label for="username">
 		<g:message code="usuario.username.label" default="Username" />

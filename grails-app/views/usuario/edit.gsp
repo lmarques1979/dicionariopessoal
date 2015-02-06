@@ -20,14 +20,23 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:uploadForm url="[resource:usuarioInstance, action:'update']">
-				<g:hiddenField name="version" value="${usuarioInstance?.version}" />
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-				
-			</g:uploadForm>
+			<g:if test="${flash.erros}">
+			<ul class="errors" role="alert">
+				<g:each in="${flash.erros}" status="i" var="erro">
+					<li>${erro}</li>
+				</g:each>
+			</ul>
+			</g:if>
+			<g:else>
+				<g:uploadForm url="[resource:usuarioInstance, action:'update']">
+					<g:hiddenField name="version" value="${usuarioInstance?.version}" />
+					<fieldset class="form">
+						<g:render template="form"/>
+					</fieldset>
+					<g:actionSubmit class="save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+					
+				</g:uploadForm>
+			</g:else>
 		</div>
 	</body>
 </html>

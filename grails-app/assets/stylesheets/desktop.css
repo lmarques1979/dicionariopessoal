@@ -9,6 +9,12 @@
 	.property-list .fieldcontain a:link, a:visited , a:hover, a:focus, a:active {
 		color: #969696;
 	}
+			
+	legend{
+		color:#6abb45;
+		font-size:14px;
+		font-weight:bold;
+	}
 	
 	th  {
 		color: #fff;
@@ -19,29 +25,30 @@
 	input[type="submit"]{
 		position: relative;
 		float:right;
-		background-color:#1cda1c;
-		border: 1px solid #cccccc;
+		background-color:#e5e5e5;
+		border: 1px solid #bfbfbf;
 		font-size:14px;
-		color:#fff;
+		color:#777777;
 		border-radius:5px;
 		padding:3px;
 		box-shadow: 0 0 3px 1px #fff;
 		width: 14%;
-		top:5px;
+		top: 10px;
+		right: 7%;
 	}
 	
 	a.edit:hover, a.edit:active, a.edit:visited, a.edit:link{
 		position: relative;
 		float:left;
-		background-color:#1cda1c;
-		border: 1px solid #cccccc;
+		background-color:#e5e5e5;
+		border: 1px solid #bfbfbf;
 		font-size:14px;
-		color:#fff;
+		color:#777777;
 		border-radius:5px;
 		padding:3px;
 		box-shadow: 0 0 3px 1px #fff;
-		width: 14%;
-		top:5px;
+		width:14%;
+		top:10px;
 		text-align:center;
 		text-decoration:none;
 	}
@@ -59,10 +66,11 @@
 	
 		
 	.header{
-		background-color:#9A2529;
+		background-color:#2c6db7;
 		padding:5px;
-		border-bottom: 1px solid #fff;
+		border-bottom: 0px solid #cd592c;
 	}
+	
 	
 	/* NAVIGATION MENU */
 	.menu ul li span {
@@ -79,9 +87,10 @@
 	
 	.menu ul li a{
 	 	display:inline-block;
-	  	text-indent:40px;
+	  	text-indent:30px;
 		background-position:1em center;
 		background-repeat: no-repeat;
+		/*background-color:#fa9d45;*/
 		text-decoration:none;
 		font-size:13px;
 		color:#fff;
@@ -89,15 +98,39 @@
 		border-radius:7px;
 		padding:5px;
 		position:relative;
-		left:5%;
+		left:2%;
+	}
+	
+	.menu ul li a.addexpressao {
+		background-image: url(../images/menu/add.png);
+	}
+	
+	.menu ul li a.idioma {
+		background-image: url(../images/menu/idioma.png);
 	}
 	
 	.menu ul li a.cadastro {
-		/*background-image: url(../images/menu/);*/
+		background-image: url(../images/menu/cadastro.png);
 	}
 	
 	.menu ul li a.login {
-		/*background-image: url(../images/menu/);*/
+		background-image: url(../images/menu/login.png);
+	}
+	
+	.menu ul li a.logout {
+		background-image: url(../images/menu/logout.png);
+	}
+	
+	.menu ul li a.expressao {
+		background-image: url(../images/menu/expressao.png);
+	}
+	
+	.menu ul li a.dicionario {
+		background-image: url(../images/menu/book.png);
+	}
+	
+	.menu ul li a.usuario {
+		background-image: url(../images/menu/usuario.png);
 	}
 	
 	/* BASE LAYOUT */
@@ -123,7 +156,7 @@
 	}
 	
 	body {
-		background:#FFF;
+		background:#fff;
 		color:#969696;
 		margin: 0 auto;
 		max-width:100%;
@@ -258,14 +291,21 @@
 	}
 	
 	/* CREATE/EDIT FORMS AND SHOW PAGES */
-	
-	fieldset,
 	.property-list {
 		margin: 0.6em 1.25em 0 1.25em;
 		padding: 0.3em 1.8em 1.25em;
 		position: relative;
 		zoom: 1;
-		border: none;
+		border: 0px solid #2C6DB7;
+		background:#FFF;
+	}
+	fieldset{
+		margin: 0.6em 1.25em 0 1.25em;
+		padding: 0.3em 1.8em 1.25em;
+		position: relative;
+		zoom: 1;
+		border: 1px solid #2C6DB7;
+		background:#f5f5f5;
 	}
 	
 	.property-list .fieldcontain {
@@ -278,12 +318,18 @@
 		margin-top: 1em;
 	}
 	
-	.fieldcontain label,
-	.fieldcontain .property-label {
+	.fieldcontain .property-label{
 		color:#969696;
 		text-align:right;
 		font-size:15px;
 		width:30%;
+	}
+	.fieldcontain label
+	{
+		color:#2C6DB7;
+		text-align:right;
+		font-size:13px;
+		width:15%;
 	}
 	
 	.fieldcontain .property-label {
@@ -310,8 +356,8 @@
 	
 	input, select, textarea {
 		background-color:#fff;
-		border: 1px solid #cccccc;
-		font-size:14px;
+		border: 1px solid #2C6DB7;
+		font-size:13px;
 		padding: 8px 0px;
 		width:50%;
 		color:#333;
@@ -319,18 +365,18 @@
 	}
 	
 	::-webkit-input-placeholder {
-	   color: orange;
-	   font: 14px;
+	   color: #bfbfbf;
+	   font: 13px;
 	}
 	
 	:-moz-placeholder {
-	   color: #333;
-	   font: 14px;
+	  color: #bfbfbf;
+	   font: 13px;
 	}
 	
 	::-moz-placeholder {
-	   color: #333;  
-	   font: 14px;
+	  color:#bfbfbf;
+	   font: 13px;
 	}
 	
 	:-ms-input-placeholder {  
@@ -368,7 +414,7 @@
 	}
 	
 	.required-indicator {
-		color:#969696;
+		color:#2C6DB7;
 		display: inline-block;
 		font-weight: bold;
 		margin-left: 0.3em;
@@ -471,7 +517,7 @@
 	
 	input:invalid, select:invalid, textarea:invalid {
 		background: #fff;
-		border-color:#cccccc;
+		border-color:2C6DB7;
 		color: #333;
 	}
 	
@@ -514,7 +560,7 @@
 	}
 	
 	th , th.sortable a {
-		background-color:#9A2529;
+		background-color:#2C6DB7;
 		color:#fff;
 		font-weight: bold;
 		line-height:1.7em;
@@ -549,11 +595,11 @@
 	}
 	
 	.odd {
-		background:#ffffff;
+		background:#FFF;
 	}
 	
 	.even {
-		background:#ffffff;
+		background:#FFF;
 	}
 	
 		
