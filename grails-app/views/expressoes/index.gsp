@@ -9,6 +9,10 @@
 	<g:set var="linguaorigem" value="${expressoesInstanceList[0].dicionariousuario.dicionario.origem.nome }" />
 	<g:set var="linguadestino" value="${expressoesInstanceList[0].dicionariousuario.dicionario.destino.nome}" />
 </g:if>
+<%@ page import="seguranca.Usuario" %>
+<sec:ifLoggedIn>
+	<g:set var="usuarioInstance" value="${Usuario.get(sec.loggedInUserInfo(field: 'id'))}" />
+</sec:ifLoggedIn>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,7 +41,7 @@
 						<tr>
 							
 							<td>
-								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${filtro}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario()}" optionKey="id"/>
+								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${filtro}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
 							</td>
 						</tr>
 					</tbody>

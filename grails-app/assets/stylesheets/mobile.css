@@ -1,25 +1,56 @@
 /* Styles for mobile devices and desktops*/
-@media screen and (max-width: 480px) {
+@media screen and (max-width:600px) {
+	
+	img.internacionalizacao{
+		position:relative;
+		top:6px;
+		left:10px;
+		
+	}
 	
 	/* FONT STACK */
 	body,
 	input, select, textarea {
 		font-family: Verdana, Geneva, sans-serif;
-	}	
+	}
+	
+	body {
+		background:#fff;
+		font-size:8px;
+		color:#969696;
+		margin: 0 auto;
+		max-width:100%;
+		overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
+	}
+	
+	/* replace with .no-boxshadow body if you have modernizr available */
+	.ie6 body,
+	.ie7 body,
+	.ie8 body {
+		border-color: #255b17;
+		border-style: solid;
+		border-width: 0;
+	}
+	
+	.ie6 body {
+		height: 100%;
+	}
+	
 	.property-list .fieldcontain a:link, a:visited , a:hover, a:focus, a:active {
 		color: #969696;
 	}
-		
+			
 	legend{
 		color:#6abb45;
-		font-size:10px;
+		font-size:1em;
 		font-weight:bold;
 	}
 	
 	th  {
 		color: #fff;
 	}
-	.invisivel{
+	
+	.invisivel{ 
 		display:none;
 	}
 	input[type="submit"]{
@@ -27,7 +58,7 @@
 		float:right;
 		background-color:#e5e5e5;
 		border: 1px solid #bfbfbf;
-		font-size:10px;
+		font-size:1em;
 		color:#777777;
 		border-radius:5px;
 		padding:3px;
@@ -42,7 +73,7 @@
 		float:left;
 		background-color:#e5e5e5;
 		border: 1px solid #bfbfbf;
-		font-size:10px;
+		font-size:1em;
 		color:#777777;
 		border-radius:5px;
 		padding:3px;
@@ -71,13 +102,17 @@
 		border-bottom: 0px solid #cd592c;
 	}
 	
+	.titulo {
+		padding-bottom:10px;
+	}
 	
-	/* NAVIGATION MENU */
-	.menu ul li span {
-		font-size:10px;
+	.titulo span{
+		font-size:1.2em;
 		font-weight: bold;
 		color:#fff;
 	}
+	/* NAVIGATION MENU */
+	
 	.menu ul{
 		margin: 0;
 		padding: 0;
@@ -87,12 +122,12 @@
 	
 	.menu ul li a{
 	 	display:inline-block;
-	  	text-indent:30px;
+	  	text-indent:22px;
 		background-position:1em center;
 		background-repeat: no-repeat;
 		/*background-color:#fa9d45;*/
 		text-decoration:none;
-		font-size:10px;
+		font-size:0.8em;
 		color:#fff;
 		border: 0px solid #fff;
 		border-radius:7px;
@@ -155,26 +190,7 @@
 		margin: 0;
 	}
 	
-	body {
-		background:#fff;
-		color:#969696;
-		margin: 0 auto;
-		max-width:100%;
-		overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
-	}
 	
-	/* replace with .no-boxshadow body if you have modernizr available */
-	.ie6 body,
-	.ie7 body,
-	.ie8 body {
-		border-color: #255b17;
-		border-style: solid;
-		border-width: 0;
-	}
-	
-	.ie6 body {
-		height: 100%;
-	}
 	
 	
 	a:hover, a:active {
@@ -184,7 +200,7 @@
 	h1 {
 		color:#969696;
 		font-weight:normal;
-		font-size:12px;
+		font-size:1.3em;
 	}
 	
 	ul {
@@ -193,6 +209,8 @@
 	
 	img {
 		border: 0;
+		width:16px;
+		height:16px;
 	}
 	
 	
@@ -209,7 +227,7 @@
 		margin:0;
 		padding:15px 0 0 10px;
 		color:#969696;
-		font-size:10px;
+		font-size:1.16em;
 	}
 	
 	.scaffold-list h1 {
@@ -257,7 +275,7 @@
 		padding:30px;
 		color:#969696;
 		text-decoration:none;
-		font-size:10px;
+		font-size:1em;;
 	}
 	
 	.nav span {
@@ -266,7 +284,7 @@
 	    padding: 0.25em 0.7em;
 	    text-decoration: none;
 	    border-radius: 0.3em;
-	    font-size:10px;
+	    font-size: 0.9em;
 	    margin-left:60px;
 	    color:#fff;
 	    font-weight:bold;
@@ -276,6 +294,8 @@
 		background-position: 0.7em center;
 		background-repeat: no-repeat;
 		text-indent: 25px;
+		width:16px;
+		height:16px;
 	}
 	
 	.nav a.home {
@@ -306,6 +326,7 @@
 		zoom: 1;
 		border: 1px solid #2C6DB7;
 		background:#f5f5f5;
+		width:100%;
 	}
 	
 	.property-list .fieldcontain {
@@ -321,15 +342,15 @@
 	.fieldcontain .property-label{
 		color:#969696;
 		text-align:right;
-		font-size:10px;
-		width:30%;
+		font-size:1.071em;
+		width:35%;
 	}
 	.fieldcontain label
 	{
 		color:#2C6DB7;
 		text-align:right;
-		font-size:10px;
-		width:15%;
+		font-size:0.929em;
+		width:35%;
 	}
 	
 	.fieldcontain .property-label {
@@ -349,7 +370,7 @@
 	
 	form{
 		margin:0 auto;
-		width:60%;
+		width:70%;
 		border:0px solid #fff;
 		border-radius:5px;
 	}
@@ -357,9 +378,9 @@
 	input, select, textarea {
 		background-color:#fff;
 		border: 1px solid #2C6DB7;
-		font-size:10px;
+		font-size:0.929em;
 		padding: 8px 0px;
-		width:50%;
+		width:45%;
 		color:#333;
 		border-radius:5px;
 	}
@@ -662,5 +683,6 @@
 		padding: 6px 25px 20px 25px;
 		color: #c33;
 		text-align:center;
-	}	
+	}
+	
 }

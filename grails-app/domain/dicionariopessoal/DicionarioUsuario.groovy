@@ -5,7 +5,6 @@ import seguranca.Usuario;
 
 class DicionarioUsuario {
 	
-	static def springSecurityService
 	
 	Usuario usuario
 	Dicionario dicionario
@@ -25,13 +24,11 @@ class DicionarioUsuario {
 		autoTimestamp true
 	}
 	
-	static def dicionariosUsuario(){
-		
-		def usuariologado = springSecurityService.currentUser
+	static def dicionariosUsuario(def usuariologado){
 		
 		def resultado = DicionarioUsuario.createCriteria().list () {
 			eq("usuario",usuariologado)
 		}
-		return resultado
+		return resultado 
 	}
 }

@@ -18,9 +18,14 @@
 	</head>
 	<body>
 		<div class="header">
+			<div class="titulo">
+				<span><g:message code="header.label"/></span>
+				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
+				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>			
+			</div>
 			<div class="menu">
 				<ul>
-				<li><span><g:message code="header.label"/></span></li>
+				<!--<li><span><g:message code="header.label"/></span></li>-->
 				
 				<sec:ifNotLoggedIn>
 					
@@ -35,7 +40,7 @@
 						<li><g:link class="idioma" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
 					</g:if>
 					<g:else>
-						<li><g:link class="dicionario" controller="Dicionario" action="index"><g:message code="dicionarios.label"/></g:link></li>
+						<li><g:link class="dicionario" controller="Dicionario" action="create"><g:message code="adddicionario.label"/></g:link></li>
 						<li><g:link class="addexpressao" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
 						<li><g:link class="expressao" controller="Expressoes" action="index"><g:message code="visualizaexpressoes.label"/></g:link></li>
 					</g:else>
