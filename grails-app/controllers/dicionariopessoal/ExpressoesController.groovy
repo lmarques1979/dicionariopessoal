@@ -13,13 +13,11 @@ class ExpressoesController extends BaseController{
 
     def index(Integer max) {
 		
-		println params;
-		
 		if(params.filtrodicionario!="-1" && params.filtrodicionario!=null){
 			
 			def resultado = Expressoes.createCriteria().list () {
 				eq("dicionariousuario.id" , Long.valueOf(params.filtrodicionario).longValue())
-				order('expressaoorigem', 'asc')
+				order(params.sort ? params.sort : 'expressaoorigem', params.order ? params.order : 'asc')
 			}
 			respond resultado, model:[expressoesInstanceCount: resultado.size]
 		}
@@ -50,7 +48,7 @@ class ExpressoesController extends BaseController{
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'expressoes.label', default: 'Expressoes'), expressoesInstance.id])
-                redirect expressoesInstance
+                redirect action:"create"
             }
             '*' { respond expressoesInstance, [status: CREATED] }
         }

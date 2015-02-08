@@ -569,7 +569,7 @@
 		vertical-align: top;
 	}
 	
-	td a:visited , a:hover, a:active{
+	td a:link, a:visited , a:hover, a:active{
 		color:#969696;
 	}
 	

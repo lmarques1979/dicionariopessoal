@@ -14,53 +14,48 @@ Writer out = getOut()
 Writer expressionOut = getExpressionOut()
 registerSitemeshPreprocessMode()
 printHtmlPart(0)
-if(true && (params.filtrodicionario)) {
+if(true && (params.filtrodicionario==null)) {
 printHtmlPart(1)
-invokeTag('set','g',3,['var':("filtro"),'value':(params.int('filtrodicionario'))],-1)
-printHtmlPart(0)
-}
-else {
-printHtmlPart(1)
-invokeTag('set','g',6,['var':("filtro"),'value':("-1")],-1)
+invokeTag('set','g',3,['var':("params.filtrodicionario"),'value':("-1")],-1)
 printHtmlPart(0)
 }
 printHtmlPart(0)
 if(true && (expressoesInstanceCount>0)) {
 printHtmlPart(1)
-invokeTag('set','g',9,['var':("linguaorigem"),'value':(expressoesInstanceList[0].dicionariousuario.dicionario.origem.nome)],-1)
+invokeTag('set','g',6,['var':("linguaorigem"),'value':(expressoesInstanceList[0].dicionariousuario.dicionario.origem.nome)],-1)
 printHtmlPart(1)
-invokeTag('set','g',10,['var':("linguadestino"),'value':(expressoesInstanceList[0].dicionariousuario.dicionario.destino.nome)],-1)
+invokeTag('set','g',7,['var':("linguadestino"),'value':(expressoesInstanceList[0].dicionariousuario.dicionario.destino.nome)],-1)
 printHtmlPart(0)
 }
 printHtmlPart(0)
 printHtmlPart(0)
 createTagBody(1, {->
 printHtmlPart(1)
-invokeTag('set','g',14,['var':("usuarioInstance"),'value':(Usuario.get(sec.loggedInUserInfo(field: 'id')))],-1)
+invokeTag('set','g',11,['var':("usuarioInstance"),'value':(Usuario.get(sec.loggedInUserInfo(field: 'id')))],-1)
 printHtmlPart(0)
 })
-invokeTag('ifLoggedIn','sec',15,[:],1)
+invokeTag('ifLoggedIn','sec',12,[:],1)
 printHtmlPart(2)
 createTagBody(1, {->
 printHtmlPart(3)
-invokeTag('captureMeta','sitemesh',19,['gsp_sm_xmlClosingForEmptyTag':(""),'name':("layout"),'content':("main")],-1)
+invokeTag('captureMeta','sitemesh',16,['gsp_sm_xmlClosingForEmptyTag':(""),'name':("layout"),'content':("main")],-1)
 printHtmlPart(3)
-invokeTag('set','g',20,['var':("entityName"),'value':(message(code: 'expressoes.label', default: 'Expressoes'))],-1)
+invokeTag('set','g',17,['var':("entityName"),'value':(message(code: 'expressoes.label', default: 'Expressoes'))],-1)
 printHtmlPart(3)
 createTagBody(2, {->
 createTagBody(3, {->
-invokeTag('message','g',21,['code':("expressoes.list.label")],-1)
+invokeTag('message','g',18,['code':("expressoes.list.label")],-1)
 })
-invokeTag('captureTitle','sitemesh',21,[:],3)
+invokeTag('captureTitle','sitemesh',18,[:],3)
 })
-invokeTag('wrapTitleTag','sitemesh',21,[:],2)
+invokeTag('wrapTitleTag','sitemesh',18,[:],2)
 printHtmlPart(1)
 })
-invokeTag('captureHead','sitemesh',22,[:],1)
+invokeTag('captureHead','sitemesh',19,[:],1)
 printHtmlPart(1)
 createTagBody(1, {->
 printHtmlPart(4)
-invokeTag('message','g',25,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
+invokeTag('message','g',22,['code':("default.link.skip.label"),'default':("Skip to content&hellip;")],-1)
 printHtmlPart(5)
 if(true && (flash.message)) {
 printHtmlPart(6)
@@ -72,16 +67,16 @@ createTagBody(2, {->
 printHtmlPart(9)
 expressionOut.print(message(code: "dicionario.label"))
 printHtmlPart(10)
-invokeTag('select','g',44,['onchange':("this.form.submit()"),'noSelection':(['-1': message(code:'selecionardicionario.label')]),'value':(filtro),'optionValue':({it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}),'name':("filtrodicionario"),'from':(dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)),'optionKey':("id")],-1)
+invokeTag('select','g',41,['onchange':("this.form.submit()"),'noSelection':(['-1': message(code:'selecionardicionario.label')]),'value':(params.int('filtrodicionario')),'optionValue':({it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}),'name':("filtrodicionario"),'from':(dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)),'optionKey':("id")],-1)
 printHtmlPart(11)
-invokeTag('submitButton','g',48,['class':("invisivel"),'name':("create"),'value':("Filtrar")],-1)
+invokeTag('submitButton','g',45,['class':("invisivel"),'name':("create"),'value':("Filtrar")],-1)
 printHtmlPart(12)
 })
-invokeTag('form','g',49,['url':([resource:expressoesInstance, action:'index'])],2)
+invokeTag('form','g',46,['url':([resource:expressoesInstance, action:'index'])],2)
 printHtmlPart(13)
-invokeTag('sortableColumn','g',56,['property':("expressaoorigem"),'title':(message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : ''))],-1)
+invokeTag('sortableColumn','g',53,['property':("expressaoorigem"),'params':(params),'title':(message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : ''))],-1)
 printHtmlPart(14)
-invokeTag('sortableColumn','g',58,['property':("expressaodestino"),'title':(message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : ''))],-1)
+invokeTag('sortableColumn','g',55,['property':("expressaodestino"),'params':(params),'title':(message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : ''))],-1)
 printHtmlPart(15)
 loop:{
 int i = 0
@@ -92,7 +87,7 @@ printHtmlPart(17)
 createTagBody(3, {->
 expressionOut.print(fieldValue(bean: expressoesInstance, field: "expressaoorigem"))
 })
-invokeTag('link','g',67,['action':("show"),'id':(expressoesInstance.id)],3)
+invokeTag('link','g',64,['action':("show"),'id':(expressoesInstance.id)],3)
 printHtmlPart(18)
 expressionOut.print(fieldValue(bean: expressoesInstance, field: "expressaodestino"))
 printHtmlPart(19)
@@ -100,10 +95,10 @@ i++
 }
 }
 printHtmlPart(20)
-invokeTag('paginate','g',77,['total':(expressoesInstanceCount ?: 0)],-1)
+invokeTag('paginate','g',74,['total':(expressoesInstanceCount ?: 0)],-1)
 printHtmlPart(21)
 })
-invokeTag('captureBody','sitemesh',80,[:],1)
+invokeTag('captureBody','sitemesh',77,[:],1)
 printHtmlPart(22)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -111,7 +106,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423253517000L
+public static final long LAST_MODIFIED = 1423410931000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

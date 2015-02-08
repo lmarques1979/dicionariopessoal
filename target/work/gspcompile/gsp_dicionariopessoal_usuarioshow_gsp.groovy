@@ -22,7 +22,7 @@ invokeTag('set','g',7,['var':("entityName"),'value':(message(code: 'usuario.labe
 printHtmlPart(2)
 createTagBody(2, {->
 createTagBody(3, {->
-invokeTag('message','g',8,['code':("default.show.label"),'args':([entityName])],-1)
+invokeTag('message','g',8,['code':("usuario.show.label")],-1)
 })
 invokeTag('captureTitle','sitemesh',8,[:],3)
 })
@@ -169,7 +169,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423233385000L
+public static final long LAST_MODIFIED = 1423361628000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
