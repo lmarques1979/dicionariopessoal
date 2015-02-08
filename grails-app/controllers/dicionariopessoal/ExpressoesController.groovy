@@ -13,11 +13,13 @@ class ExpressoesController extends BaseController{
 
     def index(Integer max) {
 		
+		println params;
+		
 		if(params.filtrodicionario!="-1" && params.filtrodicionario!=null){
 			
 			def resultado = Expressoes.createCriteria().list () {
 				eq("dicionariousuario.id" , Long.valueOf(params.filtrodicionario).longValue())
-				order('dateCreated', 'desc')
+				order('expressaoorigem', 'asc')
 			}
 			respond resultado, model:[expressoesInstanceCount: resultado.size]
 		}

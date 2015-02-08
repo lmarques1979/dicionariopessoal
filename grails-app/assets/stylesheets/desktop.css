@@ -573,7 +573,7 @@
 		color:#969696;
 	}
 	
-	th , th.sortable a {
+	th {
 		background-color:#2C6DB7;
 		color:#fff;
 		font-weight: bold;
@@ -581,6 +581,23 @@
 		padding: 0.2em 0.6em;
 		text-align:center;
 	}
+	
+	th.sortable a {
+		background-position: right;
+		background-repeat: no-repeat;
+		padding-right: 1.1em;
+	}
+	
+	th.asc a {
+		background-image: url(../images/skin/asc.png);
+	}
+	
+	th.desc a {
+		background-image: url(../images/skin/desc.png);
+	} 
+	
+	
+	
 	
 	thead th {
 		white-space: nowrap;
@@ -598,16 +615,7 @@
 	th a:hover, th a:focus {
 		color: #fff;
 	}
-	
-	
-	th.asc a {
-		background-image: url(../images/skin/sorted_asc.gif);
-	}
-	
-	th.desc a {
-		background-image: url(../images/skin/sorted_desc.gif);
-	}
-	
+		
 	.odd {
 		background:#FFF;
 	}

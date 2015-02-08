@@ -1,10 +1,7 @@
 <%@ page import="dicionariopessoal.Expressoes" %>
-<g:if test="${params.filtrodicionario}">
-	<g:set var="filtro" value="${params.int('filtrodicionario')}" />
+<g:if test="${params.filtrodicionario==null}">
+	<g:set var="params.filtrodicionario" value="-1" />
 </g:if>
-<g:else>
-	<g:set var="filtro" value="-1" />
-</g:else>
 <g:if test="${expressoesInstanceCount>0}">
 	<g:set var="linguaorigem" value="${expressoesInstanceList[0].dicionariousuario.dicionario.origem.nome }" />
 	<g:set var="linguadestino" value="${expressoesInstanceList[0].dicionariousuario.dicionario.destino.nome}" />
@@ -41,7 +38,7 @@
 						<tr>
 							
 							<td>
-								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${filtro}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
+								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${params.int('filtrodicionario')}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
 							</td>
 						</tr>
 					</tbody>
@@ -53,9 +50,9 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="expressaoorigem" title="${message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : '') }" />
+						<g:sortableColumn property="expressaoorigem" params="${params}" title="${message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : '') }" />
 					
-						<g:sortableColumn property="expressaodestino" title="${message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : '')}" />
+						<g:sortableColumn property="expressaodestino" params="${params}" title="${message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : '')}" />
 					
 						
 					</tr>
