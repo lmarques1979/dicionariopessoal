@@ -58,18 +58,16 @@ i++
 }
 }
 printHtmlPart(13)
-invokeTag('paginate','g',37,['total':(tipoExpressaoInstanceCount ?: 0)],-1)
-printHtmlPart(14)
 })
-invokeTag('captureBody','sitemesh',40,[:],1)
-printHtmlPart(15)
+invokeTag('captureBody','sitemesh',38,[:],1)
+printHtmlPart(14)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423484853000L
+public static final long LAST_MODIFIED = 1423503878000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

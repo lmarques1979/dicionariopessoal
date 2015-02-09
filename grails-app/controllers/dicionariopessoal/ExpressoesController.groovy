@@ -13,15 +13,19 @@ class ExpressoesController extends BaseController{
 
     def index() {
 		
-		if( (params.filtrodicionario!="-1" && params.filtrodicionario!=null) ||
-			(params.filtroexpressao!="-1" && params.filtroexpressao!=null) ){
+		def filtrodicionario=params.filtrodicionario
+		def filtroexpressao=params.filtroexpressao		
+				
+		if( (filtrodicionario!="-1" && filtrodicionario!=null) ||
+			(filtroexpressao!="-1" && filtroexpressao!=null) 
+		   ){
 			
 			def resultado = Expressoes.createCriteria().list () {
-				if(params.filtrodicionario!="-1" && params.filtrodicionario!=null){
-					eq("dicionariousuario.id" , Long.valueOf(params.filtrodicionario).longValue())
+				if(filtrodicionario!="-1" && filtrodicionario!=null){
+					eq("dicionariousuario.id" , Long.valueOf(filtrodicionario).longValue())
 				}			
-				if(params.filtroexpressao!="-1" && params.filtroexpressao!=null){
-					eq("tipoexpressao.id" , Long.valueOf(params.filtroexpressao).longValue())
+				if(filtroexpressao!="-1" && filtroexpressao!=null){
+					eq("tipoexpressao.id" , Long.valueOf(filtroexpressao).longValue())
 				}		
 				order(params.sort ? params.sort : 'expressaoorigem', params.order ? params.order : 'asc')
 			}

@@ -1,7 +1,4 @@
 <%@ page import="dicionariopessoal.Expressoes" %>
-<g:if test="${params.filtrodicionario==null}">
-	<g:set var="params.filtrodicionario" value="-1" />
-</g:if>
 <g:if test="${expressoesInstanceCount>0}">
 	<g:set var="linguaorigem" value="${expressoesInstanceList[0].dicionariousuario.dicionario.origem.nome }" />
 	<g:set var="linguadestino" value="${expressoesInstanceList[0].dicionariousuario.dicionario.destino.nome}" />
