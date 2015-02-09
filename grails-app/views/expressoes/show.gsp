@@ -41,6 +41,16 @@
 					
 				</li>
 				</g:if>
+				
+				<g:if test="${expressoesInstance?.tipoexpressao}">
+				<li class="fieldcontain">
+					
+					<span id="expressaodestino-label" class="property-label"><g:message code="tipoexpressao.label"/></span>
+					
+						<span class="property-value" aria-labelledby="expressaodestino-label"><g:fieldValue bean="${expressoesInstance}" field="tipoexpressao.descricao"/></span>
+					
+				</li>
+				</g:if>
 			
 				
 			
