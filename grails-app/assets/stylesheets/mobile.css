@@ -131,7 +131,7 @@
 	
 	.menu ul li a{
 	 	display:inline-block;
-	  	text-indent:22px;
+	  	text-indent:20px;
 		background-position:1em center;
 		background-repeat: no-repeat;
 		/*background-color:#fa9d45;*/
@@ -143,6 +143,10 @@
 		padding:5px;
 		position:relative;
 		left:2%;
+	}
+	
+	.menu ul li a.tipoexpressao {
+		background-image: url(../images/menu/tipoexpressao.png);
 	}
 	
 	.menu ul li a.addexpressao {
