@@ -451,6 +451,8 @@
 		display: inline-block;
 		list-style-position: inside;
 		vertical-align: top;
+		list-style-type: square;
+		color:#2C6DB7;
 	}
 	
 	.ie6 ul.one-to-many, .ie7 ul.one-to-many {

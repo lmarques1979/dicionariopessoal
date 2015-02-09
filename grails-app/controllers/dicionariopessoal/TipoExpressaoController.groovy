@@ -10,7 +10,7 @@ class TipoExpressaoController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index() {
         respond TipoExpressao.list(), model:[tipoExpressaoInstanceCount: TipoExpressao.count()]
     }
 

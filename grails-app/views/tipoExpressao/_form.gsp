@@ -16,7 +16,7 @@
 	
 <ul class="one-to-many">
 <g:each in="${tipoExpressaoInstance?.expressoes?}" var="e">
-    <li><g:link controller="expressoes" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></li>
+    <li><g:link controller="expressoes" action="show" id="${e.id}">${e?.expressaoorigem + ' > ' + e?.expressaodestino}</g:link></li>
 </g:each>
 <li class="add">
 <g:link controller="expressoes" action="create" params="['tipoExpressao.id': tipoExpressaoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'expressoes.label', default: 'Expressoes')])}</g:link>
