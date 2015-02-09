@@ -63,48 +63,58 @@ expressionOut.print(flash.message)
 printHtmlPart(7)
 }
 printHtmlPart(8)
-createTagBody(2, {->
+invokeTag('message','g',30,['code':("filtroexpressoes.label")],-1)
 printHtmlPart(9)
-expressionOut.print(message(code: "dicionario.label"))
+createTagBody(2, {->
 printHtmlPart(10)
-invokeTag('select','g',41,['onchange':("this.form.submit()"),'noSelection':(['-1': message(code:'selecionardicionario.label')]),'value':(params.int('filtrodicionario')),'optionValue':({it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}),'name':("filtrodicionario"),'from':(dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)),'optionKey':("id")],-1)
+invokeTag('message','g',34,['code':("dicionario.dicionariousuario.label")],-1)
 printHtmlPart(11)
-invokeTag('submitButton','g',45,['class':("invisivel"),'name':("create"),'value':("Filtrar")],-1)
+invokeTag('select','g',36,['onchange':("this.form.submit()"),'noSelection':(['-1': message(code:'selecionardicionario.label')]),'value':(params.int('filtrodicionario')),'optionValue':({it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}),'name':("filtrodicionario"),'from':(dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)),'optionKey':("id")],-1)
 printHtmlPart(12)
-})
-invokeTag('form','g',46,['url':([resource:expressoesInstance, action:'index'])],2)
+invokeTag('message','g',40,['code':("tipoexpressao.label")],-1)
+printHtmlPart(11)
+invokeTag('select','g',42,['onchange':("this.form.submit()"),'noSelection':(['-1': message(code:'selecionarexpressao.label')]),'value':(params.int('filtroexpressao')),'optionValue':("descricao"),'name':("filtroexpressao"),'from':(dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)),'optionKey':("id")],-1)
 printHtmlPart(13)
-invokeTag('sortableColumn','g',53,['property':("expressaoorigem"),'params':(params),'title':(message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : ''))],-1)
+invokeTag('submitButton','g',44,['class':("invisivel"),'name':("create"),'value':("Filtrar")],-1)
 printHtmlPart(14)
-invokeTag('sortableColumn','g',55,['property':("expressaodestino"),'params':(params),'title':(message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : ''))],-1)
+})
+invokeTag('form','g',45,['url':([resource:expressoesInstance, action:'index'])],2)
 printHtmlPart(15)
+invokeTag('sortableColumn','g',52,['property':("expressaoorigem"),'params':(params),'title':(message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : ''))],-1)
+printHtmlPart(16)
+invokeTag('sortableColumn','g',54,['property':("expressaodestino"),'params':(params),'title':(message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : ''))],-1)
+printHtmlPart(17)
+invokeTag('sortableColumn','g',56,['property':("tipoexpressao.descricao"),'params':(params),'title':(message(code: 'tipoexpressao.label', default: 'Expressaodestino'))],-1)
+printHtmlPart(18)
 loop:{
 int i = 0
 for( expressoesInstance in (expressoesInstanceList) ) {
-printHtmlPart(16)
+printHtmlPart(19)
 expressionOut.print((i % 2) == 0 ? 'even' : 'odd')
-printHtmlPart(17)
+printHtmlPart(20)
 createTagBody(3, {->
 expressionOut.print(fieldValue(bean: expressoesInstance, field: "expressaoorigem"))
 })
-invokeTag('link','g',64,['action':("show"),'id':(expressoesInstance.id)],3)
-printHtmlPart(18)
+invokeTag('link','g',65,['action':("show"),'id':(expressoesInstance.id)],3)
+printHtmlPart(21)
 expressionOut.print(fieldValue(bean: expressoesInstance, field: "expressaodestino"))
-printHtmlPart(19)
+printHtmlPart(22)
+expressionOut.print(expressoesInstance?.tipoexpressao?.descricao ? expressoesInstance?.tipoexpressao?.descricao : '')
+printHtmlPart(23)
 i++
 }
 }
-printHtmlPart(20)
+printHtmlPart(24)
 })
-invokeTag('captureBody','sitemesh',75,[:],1)
-printHtmlPart(21)
+invokeTag('captureBody','sitemesh',78,[:],1)
+printHtmlPart(25)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423419114000L
+public static final long LAST_MODIFIED = 1423500823000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

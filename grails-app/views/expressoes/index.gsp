@@ -43,7 +43,7 @@
 					</div>
 					<g:submitButton class="invisivel" name="create" value="Filtrar" />
 				</g:form> 
-			</fieldset><br>
+			</fieldset>
 	
 			<table>
 			<thead>

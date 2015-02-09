@@ -30,25 +30,31 @@ invokeTag('message','g',10,['code':("dicionario.dicionariousuario.label"),'defau
 printHtmlPart(5)
 invokeTag('select','g',13,['id':("dicionariousuario"),'name':("dicionariousuario.id"),'from':(dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)),'optionValue':({it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}),'optionKey':("id"),'required':(""),'value':("id"),'class':("many-to-one")],-1)
 printHtmlPart(6)
-expressionOut.print(hasErrors(bean: expressoesInstance, field: 'expressaoorigem', 'error'))
+expressionOut.print(hasErrors(bean: expressoesInstance, field: 'tipoexpressao', 'error'))
 printHtmlPart(7)
-invokeTag('message','g',18,['code':("expressoes.expressaoorigem.label"),'default':("Expressaoorigem")],-1)
-printHtmlPart(5)
-invokeTag('textArea','g',21,['name':("expressaoorigem"),'value':(expressoesInstance?.expressaoorigem),'rows':("5")],-1)
+invokeTag('message','g',18,['code':("dicionario.tipoexpressao.label"),'default':("Origem")],-1)
 printHtmlPart(8)
-expressionOut.print(hasErrors(bean: expressoesInstance, field: 'expressaodestino', 'error'))
+invokeTag('select','g',20,['id':("tipoexpressao"),'name':("tipoexpressao.id"),'from':(dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)),'optionValue':("descricao"),'optionKey':("id"),'required':(""),'value':("id"),'class':("many-to-one")],-1)
 printHtmlPart(9)
-invokeTag('message','g',28,['code':("expressoes.expressaodestino.label"),'default':("Expressaodestino")],-1)
-printHtmlPart(5)
-invokeTag('textArea','g',31,['name':("expressaodestino"),'value':(expressoesInstance?.expressaodestino),'rows':("5")],-1)
+expressionOut.print(hasErrors(bean: expressoesInstance, field: 'expressaoorigem', 'error'))
 printHtmlPart(10)
+invokeTag('message','g',24,['code':("expressoes.expressaoorigem.label"),'default':("Expressaoorigem")],-1)
+printHtmlPart(5)
+invokeTag('textArea','g',27,['name':("expressaoorigem"),'value':(expressoesInstance?.expressaoorigem),'rows':("5")],-1)
+printHtmlPart(11)
+expressionOut.print(hasErrors(bean: expressoesInstance, field: 'expressaodestino', 'error'))
+printHtmlPart(12)
+invokeTag('message','g',34,['code':("expressoes.expressaodestino.label"),'default':("Expressaodestino")],-1)
+printHtmlPart(5)
+invokeTag('textArea','g',37,['name':("expressaodestino"),'value':(expressoesInstance?.expressaodestino),'rows':("5")],-1)
+printHtmlPart(13)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423253702000L
+public static final long LAST_MODIFIED = 1423494012000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
