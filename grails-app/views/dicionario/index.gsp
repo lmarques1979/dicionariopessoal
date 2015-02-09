@@ -19,7 +19,7 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="nome" title="${message(code: 'dicionario.nome.label', default: 'Nome')}" />
+						<g:sortableColumn property="dicionario.nome" title="${message(code: 'dicionario.nome.label', default: 'Nome')}" />
 					
 						<th><g:message code="dicionario.origem.label" default="Origem" /></th>
 					

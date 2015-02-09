@@ -1,3 +1,8 @@
+<%@ page import="seguranca.Usuario" %>
+<sec:ifLoggedIn>
+	<g:set var="usuarioInstance" value="${Usuario.get(sec.loggedInUserInfo(field: 'id'))}" />
+</sec:ifLoggedIn>
+
 <!DOCTYPE html>
 <!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
@@ -21,7 +26,12 @@
 			<div class="titulo">
 				<span><g:message code="header.label"/></span>
 				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
-				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>			
+				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>		
+				
+				<sec:ifLoggedIn>
+					<g:link class="usuariologado" id="${usuarioInstance.id}" action="show" controller="Usuario">${usuarioInstance.buscaNome(usuarioInstance)} [${usuarioInstance.username}]</g:link>
+				</sec:ifLoggedIn>
+								
 			</div>
 			<div class="menu">
 				<ul>
@@ -34,13 +44,12 @@
 				</sec:ifNotLoggedIn>
 				<sec:ifLoggedIn>
 				
-					<li><g:link class="usuario" controller="Usuario" action="show" id="${sec.loggedInUserInfo(field:"id")}"><g:message code="dadosusuario.label"/></g:link></li>
-						
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
 						<li><g:link class="idioma" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
 					</g:if>
 					<g:else>
 						<li><g:link class="dicionario" controller="Dicionario" action="create"><g:message code="adddicionario.label"/></g:link></li>
+						<li><g:link class="tipoexpressao" controller="TipoExpressao" action="create"><g:message code="addtipoexpressao.label"/></g:link></li>
 						<li><g:link class="addexpressao" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
 						<li><g:link class="expressao" controller="Expressoes" action="index"><g:message code="visualizaexpressoes.label"/></g:link></li>
 					</g:else>

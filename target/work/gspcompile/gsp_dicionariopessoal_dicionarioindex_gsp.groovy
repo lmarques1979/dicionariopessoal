@@ -41,7 +41,7 @@ expressionOut.print(flash.message)
 printHtmlPart(7)
 }
 printHtmlPart(8)
-invokeTag('sortableColumn','g',22,['property':("nome"),'title':(message(code: 'dicionario.nome.label', default: 'Nome'))],-1)
+invokeTag('sortableColumn','g',22,['property':("dicionario.nome"),'title':(message(code: 'dicionario.nome.label', default: 'Nome'))],-1)
 printHtmlPart(9)
 invokeTag('message','g',24,['code':("dicionario.origem.label"),'default':("Origem")],-1)
 printHtmlPart(10)
@@ -77,7 +77,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423174171000L
+public static final long LAST_MODIFIED = 1423418742000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

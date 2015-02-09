@@ -8,6 +8,15 @@
 		
 	}
 	
+	a.usuariologado:link, a.usuariologado:visited , a.usuariologado:hover, a.usuariologado:focus, a.usuariologado:active {
+		text-decoration:none;
+		position:relative;
+		top:-2px;
+		left:20px;
+		color:#fff;
+		font-size:0.8em;		
+	}
+	
 	/* FONT STACK */
 	body,
 	input, select, textarea {

@@ -12,7 +12,7 @@ class DicionarioController extends BaseController{
 
     def index(Integer max) {
       
-		def resultado = DicionarioUsuario.findAllByUsuario(usuarioLogado).collect{it.dicionario}
+		def resultado = DicionarioUsuario.findAllByUsuario(usuarioLogado,[sort: params.sort ? params.sort : 'dicionario.nome', order: params.order ? params.order : 'asc']).collect{it.dicionario}
 		
 		respond resultado, model:[dicionarioInstanceCount: resultado.size]
     }

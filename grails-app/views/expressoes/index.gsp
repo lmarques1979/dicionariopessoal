@@ -26,25 +26,24 @@
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			
-			<table>
-				
+			<fieldset class="form">
+				<legend><g:message code="filtroexpressoes.label"/></legend>
 				<g:form url="[resource:expressoesInstance, action:'index']" >
-					<thead>
-						<tr>
-							<th colspan="2">${message(code: "dicionario.label")}</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							
-							<td>
-								<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${params.int('filtrodicionario')}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
-							</td>
-						</tr>
-					</tbody>
+					<div class="fieldcontain">
+						<label for="origem">
+							<g:message code="dicionario.dicionariousuario.label"/>
+						</label>
+						<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${params.int('filtrodicionario')}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
+					</div>
+					<div class="fieldcontain">
+						<label for="origem">
+							<g:message code="tipoexpressao.label"/>
+						</label>
+						<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionarexpressao.label')]}" value="${params.int('filtroexpressao')}" optionValue="descricao" name="filtroexpressao" from="${dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)}" optionKey="id"/>
+					</div>
 					<g:submitButton class="invisivel" name="create" value="Filtrar" />
 				</g:form> 
-			</table>
+			</fieldset><br>
 	
 			<table>
 			<thead>
@@ -53,6 +52,8 @@
 						<g:sortableColumn property="expressaoorigem" params="${params}" title="${message(code: 'expressoes.expressaoorigem.label', default: 'Expressaoorigem') + (linguaorigem ? ' - ' + linguaorigem : '') }" />
 					
 						<g:sortableColumn property="expressaodestino" params="${params}" title="${message(code: 'expressoes.expressaodestino.label', default: 'Expressaodestino') + (linguadestino ? ' - ' + linguadestino : '')}" />
+						
+						<g:sortableColumn property="tipoexpressao.descricao" params="${params}" title="${message(code: 'tipoexpressao.label', default: 'Expressaodestino')}" />
 					
 						
 					</tr>
@@ -64,15 +65,15 @@
 						<td><g:link action="show" id="${expressoesInstance.id}">${fieldValue(bean: expressoesInstance, field: "expressaoorigem")}</g:link></td>
 					
 						<td>${fieldValue(bean: expressoesInstance, field: "expressaodestino")}</td>
+						
+						<td>${expressoesInstance?.tipoexpressao?.descricao ? expressoesInstance?.tipoexpressao?.descricao : ''}</td>
 					
 						
 					</tr>
 				</g:each>
 				</tbody>
 			</table>
-			<div class="pagination">
-				<g:paginate total="${expressoesInstanceCount ?: 0}" />
-			</div>
+			
 		</div>
 	</body>
 </html>

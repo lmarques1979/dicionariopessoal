@@ -11,16 +11,24 @@ class ExpressoesController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index() {
 		
-		if(params.filtrodicionario!="-1" && params.filtrodicionario!=null){
+		if( (params.filtrodicionario!="-1" && params.filtrodicionario!=null) ||
+			(params.filtroexpressao!="-1" && params.filtroexpressao!=null) ){
 			
 			def resultado = Expressoes.createCriteria().list () {
-				eq("dicionariousuario.id" , Long.valueOf(params.filtrodicionario).longValue())
+				if(params.filtrodicionario!="-1" && params.filtrodicionario!=null){
+					eq("dicionariousuario.id" , Long.valueOf(params.filtrodicionario).longValue())
+				}			
+				if(params.filtroexpressao!="-1" && params.filtroexpressao!=null){
+					eq("tipoexpressao.id" , Long.valueOf(params.filtroexpressao).longValue())
+				}		
 				order(params.sort ? params.sort : 'expressaoorigem', params.order ? params.order : 'asc')
 			}
+			
 			respond resultado, model:[expressoesInstanceCount: resultado.size]
 		}
+		
 	}	
 	
     def show(Expressoes expressoesInstance) {

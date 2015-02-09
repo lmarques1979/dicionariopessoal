@@ -13,6 +13,12 @@
 	<g:select id="dicionariousuario" name="dicionariousuario.id" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" optionKey="id" required="" value="id" class="many-to-one"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: expressoesInstance, field: 'tipoexpressao', 'error')}">
+	<label for="origem">
+		<g:message code="dicionario.tipoexpressao.label" default="Origem" />
+	</label>
+	<g:select id="tipoexpressao" name="tipoexpressao.id" from="${dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)}" optionValue="descricao" optionKey="id" required="" value="id" class="many-to-one"/>
+</div>
 <div class="fieldcontain ${hasErrors(bean: expressoesInstance, field: 'expressaoorigem', 'error')} required">
 	<label for="expressaoorigem">
 		<g:message code="expressoes.expressaoorigem.label" default="Expressaoorigem" />

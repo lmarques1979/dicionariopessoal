@@ -11,11 +11,13 @@ class Expressoes {
 	Date dateCreated
 	Date lastUpdated
 	
-	static belongsTo = [dicionariousuario:DicionarioUsuario]
+	static hasOne 		= [tipoexpressao:TipoExpressao]
+	static belongsTo 	= [dicionariousuario:DicionarioUsuario] 
 	
 	static constraints = {
 		expressaoorigem(nullable:false,blank:false)
 		expressaodestino(nullable:false,blank:false)
+		tipoexpressao(nullable:true)
 	}
 	
 	static mapping = {

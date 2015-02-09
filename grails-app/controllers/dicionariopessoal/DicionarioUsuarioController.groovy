@@ -12,7 +12,7 @@ class DicionarioUsuarioController extends BaseController{
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
-    def index(Integer max) {
+    def index() {
         
 		def resultado = DicionarioUsuario.createCriteria().list () {
 			eq("usuario",usuarioLogado)
