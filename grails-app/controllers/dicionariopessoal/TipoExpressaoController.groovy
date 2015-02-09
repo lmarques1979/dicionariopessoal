@@ -11,8 +11,7 @@ class TipoExpressaoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond TipoExpressao.list(params), model:[tipoExpressaoInstanceCount: TipoExpressao.count()]
+        respond TipoExpressao.list(), model:[tipoExpressaoInstanceCount: TipoExpressao.count()]
     }
 
     def show(TipoExpressao tipoExpressaoInstance) {
