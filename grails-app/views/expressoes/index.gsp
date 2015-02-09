@@ -23,25 +23,27 @@
 				<div class="message" role="status">${flash.message}</div>
 			</g:if>
 			
-			<fieldset class="form">
-				<legend><g:message code="filtroexpressoes.label"/></legend>
-				<g:form url="[resource:expressoesInstance, action:'index']" >
-					<div class="fieldcontain">
-						<label for="origem">
-							<g:message code="dicionario.dicionariousuario.label"/>
-						</label>
-						<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${params.int('filtrodicionario')}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
-					</div>
-					<div class="fieldcontain">
-						<label for="origem">
-							<g:message code="tipoexpressao.label"/>
-						</label>
-						<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionarexpressao.label')]}" value="${params.int('filtroexpressao')}" optionValue="descricao" name="filtroexpressao" from="${dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)}" optionKey="id"/>
-					</div>
-					<g:submitButton class="invisivel" name="create" value="Filtrar" />
-				</g:form> 
-			</fieldset>
-	
+			<g:form url="[resource:expressoesInstance, action:'index']" >
+				<fieldset class="form">
+					<legend><g:message code="filtroexpressoes.label"/></legend>
+					
+						<div class="fieldcontain">
+							<label for="origem">
+								<g:message code="dicionario.dicionariousuario.label"/>
+							</label>
+							<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionardicionario.label')]}" value="${params.int('filtrodicionario')}" optionValue="${{it.dicionario.nome + ' - ' + it.dicionario.origem.nome + ' > ' + it.dicionario.destino.nome}}" name="filtrodicionario" from="${dicionariopessoal.DicionarioUsuario.dicionariosUsuario(usuarioInstance)}" optionKey="id"/>
+						</div>
+						<div class="fieldcontain">
+							<label for="origem">
+								<g:message code="tipoexpressao.label"/>
+							</label>
+							<g:select onchange="this.form.submit()" noSelection="${['-1': message(code:'selecionarexpressao.label')]}" value="${params.int('filtroexpressao')}" optionValue="descricao" name="filtroexpressao" from="${dicionariopessoal.TipoExpressao.tipoExpressaoUsuario(usuarioInstance)}" optionKey="id"/>
+						</div>
+						<g:submitButton class="invisivel" name="create" value="Filtrar" />
+					
+				</fieldset>
+			</g:form> 
+			
 			<table>
 			<thead>
 					<tr>
