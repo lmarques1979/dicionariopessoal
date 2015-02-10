@@ -346,7 +346,7 @@
 	.fieldcontain .property-label{
 		color:#969696;
 		text-align:right;
-		font-size:1.071em;
+		font-size:1em;
 		width:30%;
 	}
 	.fieldcontain label
@@ -364,6 +364,7 @@
 	.fieldcontain .property-value {
 		display: block;
 		margin-left: 33%;
+		font-size: 1em;
 	}
 	
 	label {
