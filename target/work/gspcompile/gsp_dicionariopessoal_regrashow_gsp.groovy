@@ -75,10 +75,10 @@ printHtmlPart(19)
 invokeTag('actionSubmit','g',39,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
 printHtmlPart(20)
 })
-invokeTag('form','g',41,['url':([resource:regraInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('form','g',42,['url':([resource:regraInstance, action:'delete']),'method':("DELETE")],2)
 printHtmlPart(21)
 })
-invokeTag('captureBody','sitemesh',43,[:],1)
+invokeTag('captureBody','sitemesh',44,[:],1)
 printHtmlPart(22)
 }
 public static final Map JSP_TAGS = new HashMap()
@@ -86,7 +86,7 @@ protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1422987964000L
+public static final long LAST_MODIFIED = 1423773868000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

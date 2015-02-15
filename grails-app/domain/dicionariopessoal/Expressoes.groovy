@@ -21,6 +21,7 @@ class Expressoes {
 	}
 	
 	static mapping = {
+		sort expressaoorigem: "asc" // or "asc"
 		autoTimestamp true
 	}
 }

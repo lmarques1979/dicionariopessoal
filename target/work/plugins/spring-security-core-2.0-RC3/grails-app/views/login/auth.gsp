@@ -16,23 +16,28 @@
 		</g:if>
 
 		<form action='${postUrl}' method='POST' id='loginForm' class='cssform' autocomplete='off'>
-			
-			<div class="fieldcontain">
+		
+		 <fieldset class="form">	
+				<legend><g:message code="loginaplicacao.label"/></legend>
+				
+				<div class="fieldcontain">
+						<label for="username">
+						<g:message code="springSecurity.login.username.label"/>
+						<span class="required-indicator">*</span>
+					</label>
+					<g:textField id="username" name="j_username"  placeholder="${message(code:'usuario.username.label') }"/>
+				</div>
+				
+				<div class="fieldcontain">
 					<label for="username">
-					<g:message code="springSecurity.login.username.label"/>
-					<span class="required-indicator">*</span>
-				</label>
-				<g:textField id="username" name="j_username"  placeholder="${message(code:'usuario.username.label') }"/>
-			</div>
-			
-			<div class="fieldcontain">
-				<label for="username">
-					<g:message code="springSecurity.login.password.label"/>
-					<span class="required-indicator">*</span>
-				</label>
-				<g:passwordField id="password" name="j_password"  placeholder="${message(code:'usuario.password.label') }"/>		
-			</div>
-			<br>
+						<g:message code="springSecurity.login.password.label"/>
+						<span class="required-indicator">*</span>
+					</label>
+					<g:passwordField id="password" name="j_password"  placeholder="${message(code:'usuario.password.label') }"/>		
+				</div>
+				<br>
+				
+			</fieldset>
 			<g:submitButton id="submit" name="create" value="${message(code: "springSecurity.login.button")}" />
 		</form>
 	</div>

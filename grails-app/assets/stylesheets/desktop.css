@@ -1,19 +1,5 @@
 @media screen and (min-width:601px) {
 
-	img.internacionalizacao{
-		position:relative;
-		top:6px;
-		left:10px;
-	}
-
-	a.usuariologado:link, a.usuariologado:visited , a.usuariologado:hover, a.usuariologado:focus, a.usuariologado:active {
-		text-decoration:none;
-		position:relative;
-		top:-2px;
-		left:20px;
-		color:#fff;
-		font-size:0.8em;		
-	}
 	/* FONT STACK */
 	body,
 	input, select, textarea {
@@ -29,6 +15,25 @@
 		overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 	}
 	
+	img.internacionalizacao{
+		position:relative;
+		top:0.5em;
+		left:0.714em;
+	}
+
+	ul li a:link, a:visited, a:active, a:hover{
+		text-decoration:none;
+		color:#969696;
+	}
+	
+	a.usuariologado:link, a.usuariologado:visited , a.usuariologado:hover, a.usuariologado:focus, a.usuariologado:active {
+		text-decoration:none;
+		position:relative;
+		top:-0.3em;
+		left:1.8em;
+		color:#fff;
+		font-size:0.8em;		
+	}
 	/* replace with .no-boxshadow body if you have modernizr available */
 	.ie6 body,
 	.ie7 body,
@@ -59,35 +64,52 @@
 	.invisivel{ 
 		display:none;
 	}
+	
 	input[type="submit"]{
 		position: relative;
 		float:right;
 		background-color:#e5e5e5;
-		border: 1px solid #bfbfbf;
+		border: 0.1em solid #bfbfbf;
 		font-size:1em;
 		color:#777777;
-		border-radius:5px;
-		padding:3px;
-		box-shadow: 0 0 3px 1px #fff;
-		width: 14%;
-		top: 10px;
-		right: 7%;
+		border-radius:0.5em;
+		padding:0.214em;
+		box-shadow: 0 0 0.22em 0.1em #fff;
+		width:10em;
+		top: 0.7em;
+		right:1em;
+	}
+	
+	input[type="submit"].delete{
+	    position: relative;
+	    float:right;
+	    background-color: #E5E5E5;
+	    border: 0.1em solid #BFBFBF;
+	    font-size: 1em;
+	    color: #777;
+	    border-radius: 0.5em;
+	    padding: 0.214em;
+	    box-shadow: 0px 0px 0.22em 0.1em #FFF;
+	    width: 10em;
+	    top:1em;
+	    right:10em;
 	}
 	
 	a.edit:hover, a.edit:active, a.edit:visited, a.edit:link{
 		position: relative;
 		float:left;
 		background-color:#e5e5e5;
-		border: 1px solid #bfbfbf;
+		border: 0.1em solid #bfbfbf;
 		font-size:1em;
 		color:#777777;
-		border-radius:5px;
-		padding:3px;
-		box-shadow: 0 0 3px 1px #fff;
-		width:14%;
-		top:10px;
+		border-radius:0.357em;
+		padding:0.215em;
+		box-shadow: 0 0 0.3em 0.1em #fff;
+		width:10em;
 		text-align:center;
 		text-decoration:none;
+		top:1em;
+		left:10em;
 	}
 		
 	h1, h2, h3, h4, h5, h6 {
@@ -96,20 +118,20 @@
 	
 	.clearer {
 	    clear: both;
-	    height: 1px;
-	    margin-top: -1px;
+	    height: 0.1em;
+	    margin-top: -0.1em;
 	    overflow: hidden;
 	}
 	
 		
 	.header{
 		background-color:#2c6db7;
-		padding:5px;
+		padding:0.357em;
 		border-bottom: 0px solid #cd592c;
 	}
 	
 	.titulo {
-		padding-bottom:10px;
+		padding-bottom:0.715em;
 	}
 	
 	.titulo span{
@@ -118,28 +140,23 @@
 		color:#fff;
 	}
 	/* NAVIGATION MENU */
-	
 	.menu ul{
 		margin: 0;
 		padding: 0;
 		list-style-type: none;
+		height:2.3em;	
 	}
 	.menu ul li { display: inline;}
 	
 	.menu ul li a{
 	 	display:inline-block;
-	  	text-indent:25px;
+	  	text-indent:2.7em;
 		background-position:1em center;
 		background-repeat: no-repeat;
-		/*background-color:#fa9d45;*/
 		text-decoration:none;
 		font-size:0.9em;
 		color:#fff;
 		border: 0px solid #fff;
-		border-radius:7px;
-		padding:5px;
-		position:relative;
-		left:2%;
 	}
 	
 	.menu ul li a.tipoexpressao {
@@ -232,7 +249,7 @@
 	
 	.content h1 {
 		margin:0;
-		padding:15px 0 0 10px;
+		padding:1.07em 0 0 0.715em;
 		color:#969696;
 		font-size:1.16em;
 	}
@@ -243,8 +260,8 @@
 	
 	.spinner {
 		background: url(../images/spinner.gif) 50% 50% no-repeat transparent;
-		height: 16px;
-		width: 16px;
+		height:1.142em;
+		width:1.142em;
 	    padding: 0.5em;
 	    position: absolute;
 	    right: 0;
@@ -254,12 +271,13 @@
 	
 	/* NAVIGATION MENU */
 	.nav {
-		padding-top:5px;
 		-moz-box-shadow: 0 0 0 0 #aaaaaa;
 		-webkit-box-shadow: 0 0 0 0 #aaaaaa;
 		box-shadow: 0 0 0 0 #aaaaaa;
 		zoom: 1;
 		border-bottom: 0 solid #CD592C;
+		height:2.5em;
+		padding-top:0.5em;
 	}
 	
 	.nav ul {
@@ -272,17 +290,16 @@
 		display: block;
 		float: left;
 		list-style-type: none;
-		margin-right:0;
-		padding: 0;
 	}
 	
 	.nav a{
 		background-position:0 center;
 		background-repeat: no-repeat;
-		padding:30px;
 		color:#969696;
 		text-decoration:none;
-		font-size:1em;;
+		font-size:1em;
+		background-size:1.0em;
+		padding-left:2.4em;
 	}
 	
 	.nav span {
@@ -292,7 +309,7 @@
 	    text-decoration: none;
 	    border-radius: 0.3em;
 	    font-size: 0.9em;
-	    margin-left:60px;
+	    margin-left:4.28em;
 	    color:#fff;
 	    font-weight:bold;
 	}
@@ -300,7 +317,7 @@
 	.nav a.home, .nav a.list, .nav a.create {
 		background-position: 0.7em center;
 		background-repeat: no-repeat;
-		text-indent: 25px;
+		text-indent: 1.785em;
 	}
 	
 	.nav a.home {
@@ -349,12 +366,13 @@
 		font-size:1em;
 		width:30%;
 	}
+	
 	.fieldcontain label
 	{
 		color:#2C6DB7;
 		text-align:right;
 		font-size:0.929em;
-		width:15%;
+		width:30%;
 	}
 	
 	.fieldcontain .property-label {
@@ -374,20 +392,20 @@
 	}
 	
 	form{
-		margin:0 auto;
-		width:60%;
+		margin:5px auto;
+		width:100%;
 		border:0px solid #fff;
-		border-radius:5px;
+		border-radius:0.357em;
 	}
 	
 	input, select, textarea {
 		background-color:#fff;
 		border: 1px solid #2C6DB7;
 		font-size:0.929em;
-		padding: 8px 0px;
+		padding: 0.571em 0;
 		width:50%;
 		color:#333;
-		border-radius:5px;
+		border-radius:0.357em;
 	}
 	
 	::-webkit-input-placeholder {
@@ -397,17 +415,17 @@
 	
 	:-moz-placeholder {
 	  color: #bfbfbf;
-	   font: 13px;
+	   font: 0.928em;
 	}
 	
 	::-moz-placeholder {
 	  color:#bfbfbf;
-	   font: 13px;
+	   font: 0.928em;
 	}
 	
 	:-ms-input-placeholder {  
 	   color: #333;  
-	   font: 14px;
+	   font: 1.em;
 	}
 	select {
 		padding: 0.2em 0.2em 0.2em 0;
@@ -418,8 +436,8 @@
 	}
 	
 	textarea {
-		width: 250px;
-		height: 150px;
+		width: 17.85em;
+		height: 10.714em;
 		overflow: auto; /* IE always renders vertical scrollbar without this */
 		vertical-align: top;
 	}
@@ -683,10 +701,10 @@
 		color:#fff;
 		overflow: hidden;
 		padding: 0.3em;
-		box-shadow: 0 0 3px 1px #fff;
+		box-shadow: 0 0 0.214em 0.1em #fff;
 		margin:0;
 		border: none;
-		width:70px;
+		width:5em;
 	}
 	
 	a.skip {
@@ -695,7 +713,7 @@
 	}
 	
 	.inner .login_message {
-		padding: 6px 25px 20px 25px;
+		padding: 0.428em 1.785em 1.428em 1.785em;
 		color: #c33;
 		text-align:center;
 	}

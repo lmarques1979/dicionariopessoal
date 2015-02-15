@@ -20,17 +20,17 @@ class ExpressoesController extends BaseController{
 			(filtroexpressao!="-1" && filtroexpressao!=null) 
 		   ){
 			
-			def resultado = Expressoes.createCriteria().list () {
+			def resultado = Expressoes.createCriteria().list(params) {
 				if(filtrodicionario!="-1" && filtrodicionario!=null){
 					eq("dicionariousuario.id" , Long.valueOf(filtrodicionario).longValue())
 				}			
 				if(filtroexpressao!="-1" && filtroexpressao!=null){
 					eq("tipoexpressao.id" , Long.valueOf(filtroexpressao).longValue())
 				}		
-				order(params.sort ? params.sort : 'expressaoorigem', params.order ? params.order : 'asc')
+				
 			}
 			
-			respond resultado, model:[expressoesInstanceCount: resultado.size]
+			respond resultado, model:[expressoesInstanceCount: resultado.totalCount]
 		}
 		
 	}	

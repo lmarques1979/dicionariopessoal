@@ -11,7 +11,8 @@ class TipoExpressaoController extends BaseController{
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index() {
-        respond TipoExpressao.list(), model:[tipoExpressaoInstanceCount: TipoExpressao.count()]
+		
+        respond TipoExpressao.list(params), model:[tipoExpressaoInstanceCount: TipoExpressao.count()]
     }
 
     def show(TipoExpressao tipoExpressaoInstance) {

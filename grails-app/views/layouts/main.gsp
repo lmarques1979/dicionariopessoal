@@ -38,7 +38,6 @@
 				<!--<li><span><g:message code="header.label"/></span></li>-->
 				
 				<sec:ifNotLoggedIn>
-					
 					<li><g:link class="cadastro" controller="Usuario" action="create"><g:message code="cadastrousuario.label"/></g:link></li>
 					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
 				</sec:ifNotLoggedIn>

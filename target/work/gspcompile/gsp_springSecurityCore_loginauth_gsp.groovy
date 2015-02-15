@@ -38,26 +38,28 @@ printHtmlPart(6)
 printHtmlPart(7)
 expressionOut.print(postUrl)
 printHtmlPart(8)
-invokeTag('message','g',22,['code':("springSecurity.login.username.label")],-1)
+invokeTag('message','g',21,['code':("loginaplicacao.label")],-1)
 printHtmlPart(9)
-invokeTag('textField','g',25,['id':("username"),'name':("j_username"),'placeholder':(message(code:'usuario.username.label'))],-1)
+invokeTag('message','g',25,['code':("springSecurity.login.username.label")],-1)
 printHtmlPart(10)
-invokeTag('message','g',30,['code':("springSecurity.login.password.label")],-1)
-printHtmlPart(9)
-invokeTag('passwordField','g',33,['id':("password"),'name':("j_password"),'placeholder':(message(code:'usuario.password.label'))],-1)
+invokeTag('textField','g',28,['id':("username"),'name':("j_username"),'placeholder':(message(code:'usuario.username.label'))],-1)
 printHtmlPart(11)
-invokeTag('submitButton','g',36,['id':("submit"),'name':("create"),'value':(message(code: "springSecurity.login.button"))],-1)
+invokeTag('message','g',33,['code':("springSecurity.login.password.label")],-1)
+printHtmlPart(10)
+invokeTag('passwordField','g',36,['id':("password"),'name':("j_password"),'placeholder':(message(code:'usuario.password.label'))],-1)
 printHtmlPart(12)
-})
-invokeTag('captureBody','sitemesh',47,[:],1)
+invokeTag('submitButton','g',41,['id':("submit"),'name':("create"),'value':(message(code: "springSecurity.login.button"))],-1)
 printHtmlPart(13)
+})
+invokeTag('captureBody','sitemesh',52,[:],1)
+printHtmlPart(14)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1423172809000L
+public static final long LAST_MODIFIED = 1423769762000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
