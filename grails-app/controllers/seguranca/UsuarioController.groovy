@@ -17,6 +17,68 @@ class UsuarioController extends BaseController{
     }
 
 	@Secured('permitAll')
+	def esqueceusenha() {
+		 
+	}
+	
+	@Transactional
+	@Secured('permitAll')
+	def enviarsenha() {
+		
+		def valido=1
+		def mensagem=""
+		flash.message = []
+		def erros = []
+		
+		if(params.username==null || params.username==''){
+			erros << message(code: 'usuarioobrigatorio.message')
+			valido = 0
+		}
+		
+		if(params.email==null || params.email==''){
+			erros << message(code: 'emailobrigatorio.message')
+			valido = 0
+		}
+		
+		if (valido){
+			
+				def resultado = Usuario.findAllByUsernameAndEmail(params.username,params.email)
+			
+				resultado.each(){
+					
+					Random novasenha = new Random()
+					
+					def Usuario usuario = it
+					String senha = Math.abs(novasenha.nextInt());
+					usuario.password= senha
+					usuario.save flush:true
+					
+					if (usuario.hasErrors()) {
+						flash.message << usuario.errors
+						redirect(controller: "usuario", action: "esqueceusenha", params: params)
+					}else{
+					
+						//Envio E-mail
+						sendMail {
+							to params.email
+							subject message(code: 'novasenhaemail.message')
+							html message(code: 'novasenha.message', args: [senha])
+						}
+						flash.message = message(code: "senhaaenviadaparaemail.message", args:[params.email])
+						return
+					  }
+			}
+			if(resultado.size()==0){
+				flash.message << message(code: 'usuarioemailnaoencontrados.message')
+				redirect(controller: "usuario", action: "esqueceusenha", params: params)
+			}
+		}else{
+			flash.erros = erros
+			redirect(controller: "usuario", action: "esqueceusenha", params: params)
+		}
+	}
+	 
+	@Secured('permitAll')
     def show(Usuario usuarioInstance) {
 		
 		def erros=[]
@@ -32,7 +94,7 @@ class UsuarioController extends BaseController{
 	@Secured('permitAll')
     def create() {
         respond new Usuario(params)
-    }
+    } 
 
     @Transactional
 	@Secured('permitAll')
