@@ -16,6 +16,14 @@
 		overflow-x: hidden; /* prevents box-shadow causing a horizontal scrollbar in firefox when viewport < 960px wide */
 	}
 	
+	a.esqueceu:link  , a.esqueceu:visited , a.esqueceu:hover, a.esqueceu:active{
+		text-decoration:none;
+		color:#2C6DB7;
+		font-weight:bold;
+		margin-left: 30%;
+		font-size:1em;
+	}
+	
 	img.internacionalizacao{
 		position:relative;
 		top:0.5em;
