@@ -22,6 +22,7 @@ class Dicionario {
     }
 	static mapping = {
 		dicionariousuario cascade: 'all-delete-orphan'
+		sort nome: "asc" // or "asc"
 		autoTimestamp true
 	}
 }

@@ -24,7 +24,8 @@
 	<body>
 		<div class="header">
 			<div class="titulo">
-				<span><g:message code="header.label"/></span>
+			
+				<a class="home" href="${createLink(uri: '/')}"><span><g:message code="header.label"/></span></a>
 				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
 				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>		
 				

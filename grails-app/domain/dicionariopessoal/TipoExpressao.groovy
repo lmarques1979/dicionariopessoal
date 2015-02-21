@@ -20,6 +20,7 @@ class TipoExpressao {
 	}
 	
 	static mapping = {
+		sort descricao: "asc" // or "asc"
 		autoTimestamp true
 	}
 	
@@ -27,6 +28,7 @@ class TipoExpressao {
 		
 		def resultado = TipoExpressao.createCriteria().list () {
 			eq("usuario",usuariologado)
+			order("descricao", "asc")
 		}
 		return resultado
 	}

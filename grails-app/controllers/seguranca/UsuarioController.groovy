@@ -69,7 +69,8 @@ class UsuarioController extends BaseController{
 					  }
 			}
 			if(resultado.size()==0){
-				flash.message << message(code: 'usuarioemailnaoencontrados.message')
+				erros << message(code: 'usuarioemailnaoencontrados.message')
+				flash.erros = erros
 				redirect(controller: "usuario", action: "esqueceusenha", params: params)
 			}
 		}else{

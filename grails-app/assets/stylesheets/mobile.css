@@ -7,6 +7,10 @@
 		font-family: Verdana, Geneva, sans-serif;
 	}
 	
+	a{
+		text-decoration:none;
+	}
+
 	body {
 		background:#fff;
 		font-size:8px;

@@ -4,6 +4,10 @@ input, select, textarea {
 	font-family: Verdana, Geneva, sans-serif;
 }
 
+a{
+	text-decoration:none;
+}
+
 body {
 	background:#fff;
 	color:#969696;

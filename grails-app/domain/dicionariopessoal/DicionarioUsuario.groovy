@@ -5,7 +5,6 @@ import seguranca.Usuario;
 
 class DicionarioUsuario {
 	
-	
 	Usuario usuario
 	Dicionario dicionario
 	Date dateCreated

@@ -50,19 +50,18 @@ class ExpressoesController extends BaseController{
             return
         }
 
-        if (expressoesInstance.hasErrors()) {
-            respond expressoesInstance.errors, view:'create'
-            return
-        }
-
         expressoesInstance.save flush:true
-
+		
+		if (expressoesInstance.hasErrors()) {
+			respond expressoesInstance.errors, view:'create'
+			return
+		}		
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'expressoes.label', default: 'Expressoes'), expressoesInstance.id])
-                redirect action:"create"
+                redirect(action: "create", params: [tipoexpressao: params.tipoexpressao.id , dicionariousuario:params.dicionariousuario.id]) 
             }
-            '*' { respond expressoesInstance, [status: CREATED] }
+            '*' { respond expressoesInstance, [status: CREATED, tipoexpressao: params.tipoexpressao.id , dicionariousuario:params.dicionariousuario.id] }
         }
     }
 

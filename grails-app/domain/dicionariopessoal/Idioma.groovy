@@ -17,6 +17,7 @@ class Idioma {
     }
 	
 	static mapping = {
+		sort nome: "asc" // or "asc"
 		autoTimestamp true
 	}
 }
