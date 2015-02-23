@@ -74,25 +74,25 @@ printHtmlPart(20)
 createTagBody(2, {->
 printHtmlPart(21)
 createTagBody(3, {->
-invokeTag('message','g',49,['code':("default.button.edit.label"),'default':("Edit")],-1)
+invokeTag('message','g',50,['code':("default.button.edit.label"),'default':("Edit")],-1)
 })
-invokeTag('link','g',49,['class':("edit"),'action':("edit"),'resource':(idiomaInstance)],3)
-printHtmlPart(21)
-invokeTag('actionSubmit','g',50,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('link','g',50,['class':("edit"),'action':("edit"),'resource':(idiomaInstance)],3)
 printHtmlPart(22)
-})
-invokeTag('form','g',52,['url':([resource:idiomaInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('actionSubmit','g',51,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
 printHtmlPart(23)
 })
-invokeTag('captureBody','sitemesh',54,[:],1)
+invokeTag('form','g',53,['url':([resource:idiomaInstance, action:'delete']),'method':("DELETE")],2)
 printHtmlPart(24)
+})
+invokeTag('captureBody','sitemesh',55,[:],1)
+printHtmlPart(25)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1424284372000L
+public static final long LAST_MODIFIED = 1424711331000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

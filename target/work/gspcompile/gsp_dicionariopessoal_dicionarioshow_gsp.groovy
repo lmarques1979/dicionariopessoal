@@ -73,25 +73,25 @@ printHtmlPart(18)
 createTagBody(2, {->
 printHtmlPart(19)
 createTagBody(3, {->
-invokeTag('message','g',57,['code':("default.button.edit.label"),'default':("Edit")],-1)
+invokeTag('message','g',58,['code':("default.button.edit.label"),'default':("Edit")],-1)
 })
-invokeTag('link','g',57,['class':("edit"),'action':("edit"),'resource':(dicionarioInstance)],3)
-printHtmlPart(19)
-invokeTag('actionSubmit','g',58,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
+invokeTag('link','g',58,['class':("edit"),'action':("edit"),'resource':(dicionarioInstance)],3)
 printHtmlPart(20)
-})
-invokeTag('form','g',59,['url':([resource:dicionarioInstance, action:'delete']),'method':("DELETE")],2)
+invokeTag('actionSubmit','g',59,['class':("delete"),'action':("delete"),'value':(message(code: 'default.button.delete.label', default: 'Delete')),'onclick':("return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');")],-1)
 printHtmlPart(21)
 })
-invokeTag('captureBody','sitemesh',61,[:],1)
+invokeTag('form','g',61,['url':([resource:dicionarioInstance, action:'delete']),'method':("DELETE")],2)
 printHtmlPart(22)
+})
+invokeTag('captureBody','sitemesh',63,[:],1)
+printHtmlPart(23)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1424284372000L
+public static final long LAST_MODIFIED = 1424714576000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'

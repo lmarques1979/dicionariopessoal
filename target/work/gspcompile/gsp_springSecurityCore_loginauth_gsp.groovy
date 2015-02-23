@@ -48,18 +48,21 @@ invokeTag('message','g',33,['code':("springSecurity.login.password.label")],-1)
 printHtmlPart(10)
 invokeTag('passwordField','g',36,['id':("password"),'name':("j_password"),'placeholder':(message(code:'usuario.password.label'))],-1)
 printHtmlPart(12)
-invokeTag('submitButton','g',41,['id':("submit"),'name':("create"),'value':(message(code: "springSecurity.login.button"))],-1)
-printHtmlPart(13)
-})
-invokeTag('captureBody','sitemesh',52,[:],1)
+createClosureForHtmlPart(13, 2)
+invokeTag('link','g',41,['class':("esqueceu"),'controller':("Usuario"),'action':("esqueceusenha")],2)
 printHtmlPart(14)
+invokeTag('submitButton','g',44,['id':("submit"),'name':("create"),'value':(message(code: "springSecurity.login.button"))],-1)
+printHtmlPart(15)
+})
+invokeTag('captureBody','sitemesh',55,[:],1)
+printHtmlPart(16)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1424284372000L
+public static final long LAST_MODIFIED = 1424455860000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
