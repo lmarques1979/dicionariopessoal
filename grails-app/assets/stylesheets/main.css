@@ -642,6 +642,7 @@ td, th {
 
 td a:link, a:visited , a:hover, a:active{
 	color:#969696;
+	text-decoration: underline;
 }
 
 th {
