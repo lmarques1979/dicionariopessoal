@@ -34,24 +34,25 @@
 				</sec:ifLoggedIn>
 								
 			</div>
+			
 			<div class="menu">
 				<ul>
 				<!--<li><span><g:message code="header.label"/></span></li>-->
 				
 				<sec:ifNotLoggedIn>
-					<li><g:link class="cadastro" controller="Usuario" action="create"><g:message code="cadastrousuario.label"/></g:link></li>
-					<li><g:link class="login" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
+					<li><g:link class="cadastro${params.controller=='usuario' && params.action=='create' ? ' active' : '' }" controller="Usuario" action="create"><g:message code="cadastrousuario.label"/></g:link></li>
+					<li><g:link class="login${params.controller=='login' && params.action=='auth' ? ' active' : '' }" controller="login" action="auth"><g:message code="login.label"/></g:link></li>
 				</sec:ifNotLoggedIn>
 				<sec:ifLoggedIn>
 				
 					<g:if test="${sec.loggedInUserInfo(field: 'username') == 'admin'}">
-						<li><g:link class="idioma" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
+						<li><g:link class="idioma${params.controller=='idioma' ? ' active' : '' }" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
 					</g:if>
 					<g:else>
-						<li><g:link class="dicionario" controller="Dicionario" action="create"><g:message code="adddicionario.label"/></g:link></li>
-						<li><g:link class="tipoexpressao" controller="TipoExpressao" action="create"><g:message code="addtipoexpressao.label"/></g:link></li>
-						<li><g:link class="addexpressao" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
-						<li><g:link class="expressao" controller="Expressoes" action="index"><g:message code="visualizaexpressoes.label"/></g:link></li>
+						<li><g:link class="dicionario${params.controller=='dicionario' ? ' active' : '' }" controller="Dicionario" action="create"><g:message code="adddicionario.label"/></g:link></li>
+						<li><g:link class="tipoexpressao${params.controller=='tipoExpressao' ? ' active' : '' }" controller="TipoExpressao" action="create"><g:message code="addtipoexpressao.label"/></g:link></li>
+						<li><g:link class="addexpressao${params.controller=='expressoes' && params.action=='create' ? ' active' : '' }" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
+						<li><g:link class="expressao${params.controller=='expressoes' && params.action!='create' ? ' active' : '' }" controller="Expressoes" action="index"><g:message code="visualizaexpressoes.label"/></g:link></li>
 					</g:else>
 					<li><g:link class="logout" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
 				</sec:ifLoggedIn>
