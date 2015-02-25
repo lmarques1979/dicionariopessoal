@@ -72,7 +72,11 @@
 				</g:each>
 				</tbody>
 			</table>
-			
+			<g:if test="${expressoesInstanceCount > 0 }">
+				<div class="pagination">
+					<g:paginate total="${expressoesInstanceCount ?: 0}" params="${params}"/>
+				</div>
+			</g:if>
 		</div>
 	</body>
 </html>

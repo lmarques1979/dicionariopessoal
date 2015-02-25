@@ -1,8 +1,14 @@
 <%@ page import="dicionariopessoal.Expressoes" %>
 <%@ page import="seguranca.Usuario" %>
-<sec:ifLoggedIn>
-	<g:set var="usuarioInstance" value="${Usuario.get(sec.loggedInUserInfo(field: 'id'))}" />
-</sec:ifLoggedIn>
+
+<g:if test="${expressoesInstance}">
+	<g:set var="usuarioInstance" value="${expressoesInstance.usuario}" />
+</g:if>
+<g:else>
+	<sec:ifLoggedIn>
+		<g:set var="usuarioInstance" value="${Usuario.get(sec.loggedInUserInfo(field: 'id'))}" />
+	</sec:ifLoggedIn>
+</g:else>
 
 <g:set var="tipoexpressao" value="${params.int('tipoexpressao')}" />
 <g:set var="dicionariousuario" value="${params.int('dicionariousuario')}" />

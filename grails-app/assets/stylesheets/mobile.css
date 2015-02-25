@@ -2,14 +2,15 @@
 @media screen and (max-width:480px) { 
 	
 	body {
-		font-size:8px;
+		font-size:8px; 
 	}
 	
 	img.internacionalizacao{
 		border:0;
-		padding:0;
-		width:2em;
-		height:2em;
+		padding:0 0.3em;
+		width:1.7em;
+		height:1.7em;
+		background:transparent;
 	}
 	
 	.menu ul li a{
@@ -26,10 +27,14 @@
 		margin:0 0.3em;	
 	}
 	
-	textarea {
-		width: 17.85em;
-		height: 8em;
-		overflow: auto; /* IE always renders vertical scrollbar without this */
-		vertical-align: top;
+	input, select, textarea {
+		width:65%;
+	}
+
+	form{
+		margin:5px auto;
+		width:100%;
+		border:0px solid #fff;
+		border-radius:0.357em;
 	}
 }

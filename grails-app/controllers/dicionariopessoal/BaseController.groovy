@@ -12,7 +12,9 @@ class BaseController{
 	
 	def getConfiguracaoParams(){
 		
-			def resultado = Configuracao.findAllByUsuario(usuarioLogado)
+			def resultado = Configuracao.createCriteria().list(){
+				eq("usuario" , usuarioLogado)
+			}
 			resultado.each() {
 				params.alturaimagens 		= it.alturaimagens ? it.alturaimagens : "120"
 				params.larguraimagens 		= it.larguraimagens ? it.larguraimagens : "125"

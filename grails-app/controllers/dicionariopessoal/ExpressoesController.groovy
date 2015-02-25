@@ -20,6 +20,7 @@ class ExpressoesController extends BaseController{
 			(filtroexpressao!="-1" && filtroexpressao!=null) 
 		   ){
 			
+		    def configuracoes = configuracaoParams  
 			def resultado = Expressoes.createCriteria().list(params) {
 				if(filtrodicionario!="-1" && filtrodicionario!=null){
 					eq("dicionariousuario.id" , Long.valueOf(filtrodicionario).longValue())

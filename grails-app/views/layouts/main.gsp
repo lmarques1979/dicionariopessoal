@@ -24,10 +24,9 @@
 	<body>
 		<div class="header">
 			<div class="titulo">
-			
 				<a class="home" href="${createLink(uri: '/')}"><span><g:message code="header.label"/></span></a>
-				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
 				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>		
+				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
 				
 				<sec:ifLoggedIn>
 					<g:link class="usuariologado" id="${usuarioInstance.id}" action="show" controller="Usuario">${usuarioInstance.buscaNome(usuarioInstance)} [${usuarioInstance.username}]</g:link>
@@ -49,6 +48,7 @@
 						<li><g:link class="idioma${params.controller=='idioma' ? ' active' : '' }" controller="Idioma" action="create"><g:message code="cadastroidioma.label"/></g:link></li>
 					</g:if>
 					<g:else>
+						<li><g:link class="configuracao${params.controller=='configuracao' ? ' active' : '' }" controller="Configuracao" action="index"><g:message code="configuracao.label"/></g:link></li>
 						<li><g:link class="dicionario${params.controller=='dicionario' ? ' active' : '' }" controller="Dicionario" action="create"><g:message code="adddicionario.label"/></g:link></li>
 						<li><g:link class="tipoexpressao${params.controller=='tipoExpressao' ? ' active' : '' }" controller="TipoExpressao" action="create"><g:message code="addtipoexpressao.label"/></g:link></li>
 						<li><g:link class="addexpressao${params.controller=='expressoes' && params.action=='create' ? ' active' : '' }" controller="Expressoes" action="create"><g:message code="addexpressao.label"/></g:link></li>
