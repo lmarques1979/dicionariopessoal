@@ -1,4 +1,3 @@
-/* FONT STACK */
 body,
 input, select, textarea {
 	font-family: Ubuntu, Verdana, Geneva, sans-serif;
@@ -11,6 +10,7 @@ input, select, textarea {
 }
 
 body {
+	font-family: Ubuntu, Verdana, Geneva, sans-serif;
 	background:#fff;
 	color:#969696;
 	margin: 0 auto;
@@ -159,32 +159,32 @@ h1, h2, h3, h4, h5, h6 {
 .header{
 	padding:0;
 	border-bottom: 0px solid #cd592c;
+	background-image: url(../images/menu.png);
+	background-repeat:no-repeat;
+	background-position:center center;  
+	background-size:100% 100%; 
 	
 }
 
 .titulo {
 	padding-bottom:0.715em;
-	background-image: url(../images/fieldset.png);
-	background-repeat:no-repeat;
-	background-position:center center;  
-	background-size:100% 100%; 
+	
 }
 
 .titulo span{
 	position:relative;
 	top:0.2em;
-	font-size:1.2em;
+	font-size:1.7em;
 	font-weight: bold;
-	color:#144276;
+	color:#fff;
 	margin-left: 0.3em;
+	font-family:"KaushanScript";
 }
 
 /* NAVIGATION MENU */
 .menu{
-	background-image: url(../images/menu.png);
-	background-repeat:no-repeat;
-	background-position:center center;  
-	background-size:100% 100%; 
+	
+	text-align: center;
 }
 .menu ul{
 	margin:0;
@@ -264,6 +264,7 @@ html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+
 }
 
 html.no-cssgradients {
@@ -303,9 +304,8 @@ img {
 	margin: 1em;
 }
 
-.content {
-	background-image: url(../images/menu/background.png);
-	background-repeat: repeat;
+.content , .inner{
+	margin-bottom:5em; 
 }
 
 .content h1 {
@@ -431,7 +431,7 @@ fieldset{
 	color:#969696;
 	text-align:right;
 	font-size:1em;
-	width:30%;
+	width:50%;
 }
 
 .fieldcontain label
@@ -447,9 +447,9 @@ fieldset{
 }
 
 .fieldcontain .property-value {
-	display: block;
-	margin-left: 33%;
 	font-size: 1em;
+	width:50%;
+	margin-left:1em;
 }
 
 label {
@@ -792,4 +792,16 @@ a.skip {
 
 a:link , a:hover{
 	text-decoration:none;
+}
+
+.footer{
+	text-align:center;
+	color:#fff;
+	background-image: url(../images/menu.png);
+	background-repeat:no-repeat;
+	background-position:center center;  
+	background-size:100% 100%;
+	font-size:0.9em;
+	padding:0.3em 0;
+	
 }

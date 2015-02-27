@@ -24,8 +24,8 @@
 	<body>
 		<div class="header">
 			<div class="titulo">
-				<a class="home" href="${createLink(uri: '/')}"><span><g:message code="header.label"/></span></a>
-				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>		
+				<a class="home" href="${createLink(uri: '/login/auth')}"><span><g:message code="header.label"/></span></a>
+				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'en']"><asset:image class="internacionalizacao" src="bandeiras/24/britain.png" title="${message(code:'english.label')}"/></g:link>	
 				<g:link id="${params.id}" action="${params.action ? params.action : 'index'}" controller="${params.controller ? params.controller : 'index'}" params="[lang: 'pt_BR']"><asset:image class="internacionalizacao" src="bandeiras/24/Brazil.png" title="${message(code:'portuguesbrasil.label')}"/></g:link>
 				
 				<sec:ifLoggedIn>
@@ -56,10 +56,15 @@
 					</g:else>
 					<li><g:link class="logout" controller="logout" action="index"><g:message code="logout.label"/></g:link></li>
 				</sec:ifLoggedIn>
+				
 				</ul>
+				
 			</div>
 		</div>
 		<g:layoutBody/>
+		<div class="footer">
+			<g:message code="copyright.label"/>
+		</div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>
 </html>

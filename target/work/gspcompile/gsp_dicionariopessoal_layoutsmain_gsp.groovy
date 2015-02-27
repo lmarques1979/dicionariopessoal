@@ -53,7 +53,7 @@ invokeTag('captureHead','sitemesh',23,[:],1)
 printHtmlPart(1)
 createTagBody(1, {->
 printHtmlPart(9)
-expressionOut.print(createLink(uri: '/'))
+expressionOut.print(createLink(uri: '/login/auth'))
 printHtmlPart(10)
 invokeTag('message','g',27,['code':("header.label")],-1)
 printHtmlPart(11)
@@ -144,20 +144,22 @@ printHtmlPart(22)
 })
 invokeTag('ifLoggedIn','sec',58,[:],2)
 printHtmlPart(27)
-invokeTag('layoutBody','g',62,[:],-1)
+invokeTag('layoutBody','g',64,[:],-1)
 printHtmlPart(28)
-invokeTag('message','g',63,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
+invokeTag('message','g',66,['code':("copyright.label")],-1)
 printHtmlPart(29)
-})
-invokeTag('captureBody','sitemesh',64,[:],1)
+invokeTag('message','g',68,['code':("spinner.alt"),'default':("Loading&hellip;")],-1)
 printHtmlPart(30)
+})
+invokeTag('captureBody','sitemesh',69,[:],1)
+printHtmlPart(31)
 }
 public static final Map JSP_TAGS = new HashMap()
 protected void init() {
 	this.jspTags = JSP_TAGS
 }
 public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
-public static final long LAST_MODIFIED = 1424888081000L
+public static final long LAST_MODIFIED = 1425068291000L
 public static final String EXPRESSION_CODEC = 'html'
 public static final String STATIC_CODEC = 'none'
 public static final String OUT_CODEC = 'html'
