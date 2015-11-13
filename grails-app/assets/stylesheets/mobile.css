@@ -7,6 +7,10 @@
 		height: 100%;
 	}
 	
+	html {
+		width:100%;
+	}
+	
 	img.internacionalizacao{
 		border:0;
 		padding:0 0.3em;

@@ -47,7 +47,7 @@ a.usuariologado:link, a.usuariologado:visited , a.usuariologado:hover, a.usuario
 	float:right;
 	right:1.8em;
 	top: 0.8em;
-	color:#144276;
+	color:#fff;
 	font-size:0.8em;		
 }
 /* replace with .no-boxshadow body if you have modernizr available */
@@ -264,6 +264,9 @@ html {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
+	width:70%;
+	margin:0 auto;
+	background-color:#f7f7f7;
 
 }
 
@@ -272,7 +275,7 @@ html.no-cssgradients {
 }
 
 .ie6 html {
-	height: 100%;
+	height:100%;
 }
 
 html * {
@@ -470,13 +473,13 @@ input, select, textarea {
 	border: 1px solid #2C6DB7;
 	font-size:0.929em;
 	padding: 0.571em 0;
-	width:30%;
+	width:60%;
 	color:#333;
 	border-radius:0.357em;
 }
 
 select{
-	width:50%;
+	width:68%;
 }
 ::-webkit-input-placeholder {
    color: #bfbfbf;

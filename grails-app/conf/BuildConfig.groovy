@@ -65,18 +65,18 @@ grails.project.dependency.resolution = {
 		// plugins for the build system only
 		build ":tomcat:7.0.54"
 		//Render PDF
-		//compile ":rendering:1.0.0"
+		compile ":rendering:1.0.0"
 		//Amazon S3
 		//here go your plugin dependencies
-		compile ":aws-sdk:1.8.11"
+		compile ":aws-sdk:1.9.22"
 		compile ":spring-security-ui:1.0-RC2"
 		// plugins for the compile step
 		compile ":scaffolding:2.1.2"
-		compile ':cache:1.1.7'
-		compile ':asset-pipeline:1.9.9'
-		compile ':cdn-asset-pipeline:0.3.5'
+		compile ':cache:1.1.8'
+		compile ':asset-pipeline:2.1.4'
+		compile ':cdn-asset-pipeline:0.4.1'
 		// plugins needed at runtime but not for compilation
-		runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.15"
+		runtime ":hibernate4:4.3.6.1" // or ":hibernate:3.6.10.15"
 		runtime ":database-migration:1.4.0"
 		runtime ":jquery:1.11.1"
 
